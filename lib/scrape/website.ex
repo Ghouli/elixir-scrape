@@ -37,16 +37,17 @@ defmodule Scrape.Website do
   """
   @spec find_title(String.t) :: String.t
   def find_title(html) do
-    title = Exquery.find html, "title", :longest
-    rx = ~r/\s[|-].{1}.+$/
+    Exquery.find html, "title", :longest
+    #title = Exquery.find html, "title", :longest
+    #rx = ~r/\s[|-].{1}.+$/
 
-    if title && String.match?(title, rx) do
-      title
-      |> String.split(rx)
-      |> List.first
-    else
-      title
-    end
+    #if title && String.match?(title, rx) do
+    #  title
+    #  |> String.split(rx)
+    #  |> List.first
+    #else
+    #  title
+    #end
   end
 
   @doc """
